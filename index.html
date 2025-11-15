@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Jenya Shvartsman | Senior Frontend Developer</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Lead Frontend Developer specializing in Angular, React, and scalable frontend architecture."
+    />
+
+    <!-- Tailwind CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Basic custom tweaks -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body class="text-slate-50 antialiased">
+    <!-- NAVBAR -->
+    <header
+      class="fixed top-0 left-0 right-0 z-20 border-b border-slate-800 bg-slate-950/80 backdrop-blur"
+    >
+      <nav
+        class="mx-auto flex max-w-5xl items-center justify-between px-4 py-3"
+      >
+        <!-- Logo -->
+        <a href="#home" class="flex items-center gap-2">
+          <div
+            class="flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-to-br from-emerald-400 to-cyan-500 text-sm font-semibold"
+          >
+            JS
+          </div>
+          <span class="text-sm font-medium text-slate-200 hidden sm:inline">
+            Jenya Shvartsman
+          </span>
+        </a>
+
+        <!-- Desktop links -->
+        <div class="hidden gap-6 text-sm font-medium text-slate-300 md:flex">
+          <a href="#home" class="hover:text-emerald-400">Home</a>
+          <a href="#about" class="hover:text-emerald-400">About</a>
+          <a href="#projects" class="hover:text-emerald-400">Projects</a>
+          <a href="#skills" class="hover:text-emerald-400">Skills</a>
+          <a href="#contact" class="hover:text-emerald-400">Contact</a>
+        </div>
+
+        <!-- Mobile menu button -->
+        <button
+          id="menuButton"
+          class="inline-flex items-center justify-center rounded-lg p-2 text-slate-300 hover:bg-slate-800 md:hidden"
+          aria-label="Open menu"
+        >
+          <svg
+            id="menuIcon"
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-6 w-6"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M4 6h16M4 12h16M4 18h16"
+            />
+          </svg>
+        </button>
+      </nav>
+
+      <!-- Mobile menu -->
+      <div
+        id="mobileMenu"
+        class="hidden border-t border-slate-800 bg-slate-950 md:hidden"
+      >
+        <div class="mx-auto flex max-w-5xl flex-col px-4 py-3 text-sm">
+          <a href="#home" class="py-2 text-slate-200 hover:text-emerald-400"
+            >Home</a
+          >
+          <a href="#about" class="py-2 text-slate-200 hover:text-emerald-400"
+            >About</a
+          >
+          <a href="#projects" class="py-2 text-slate-200 hover:text-emerald-400"
+            >Projects</a
+          >
+          <a href="#skills" class="py-2 text-slate-200 hover:text-emerald-400"
+            >Skills</a
+          >
+          <a href="#contact" class="py-2 text-slate-200 hover:text-emerald-400"
+            >Contact</a
+          >
+        </div>
+      </div>
+    </header>
+
+    <!-- MAIN CONTENT -->
+    <main class="mx-auto mt-20 max-w-5xl px-4 pb-16 pt-8 sm:pt-12">
+      <!-- HERO / HOME -->
+      <section
+        id="home"
+        class="flex flex-col items-start gap-10 py-12 md:flex-row md:items-center md:justify-between"
+      >
+        <div class="max-w-xl">
+          <p class="text-sm font-medium text-emerald-400">Hi, I'm</p>
+          <h1
+            class="mt-2 text-3xl font-bold tracking-tight text-slate-50 sm:text-4xl md:text-5xl"
+          >
+            Jenya Shvartsman
+          </h1>
+          <p
+            class="mt-3 text-lg font-medium text-emerald-300 typing-caret min-h-[1.5rem]"
+            id="typingText"
+          >
+            Lead Frontend Developer
+          </p>
+          <p class="mt-5 text-sm leading-relaxed text-slate-300 sm:text-base">
+            I'm a Lead Frontend Developer with 10+ years of experience building
+            high-performance web applications using
+            <span class="font-semibold text-emerald-300">Angular</span>,
+            <span class="font-semibold text-emerald-300">React</span>, and
+            <span class="font-semibold text-emerald-300">TypeScript</span>. I
+            focus on UI architecture, micro frontends, and creating user-focused
+            products that are fast, maintainable, and a pleasure to use.
+          </p>
+
+          <div class="mt-6 flex flex-wrap items-center gap-4">
+            <a
+              href="#projects"
+              class="rounded-full bg-emerald-500 px-5 py-2 text-sm font-semibold text-slate-950 shadow-lg shadow-emerald-500/30 hover:bg-emerald-400"
+            >
+              View Projects
+            </a>
+            <a
+              href="#contact"
+              class="text-sm font-medium text-slate-200 hover:text-emerald-400"
+            >
+              Get in touch →
+            </a>
+          </div>
+
+          <p class="mt-8 text-xs text-slate-500">Scroll to explore my work</p>
+        </div>
+
+        <!-- Simple "card" on the right -->
+        <div
+          class="mt-4 w-full max-w-xs rounded-2xl border border-slate-800 bg-slate-900/60 p-5 text-sm text-slate-300 md:mt-0"
+        >
+          <h2
+            class="text-xs font-semibold uppercase tracking-wide text-slate-400"
+          >
+            Currently
+          </h2>
+          <p class="mt-2 font-medium text-slate-100">
+            Lead Frontend Developer @ 1touch.io
+          </p>
+          <p class="mt-2 text-xs text-slate-400">
+            Building data-security and privacy intelligence solutions with
+            Angular, Nx, and a micro-frontend architecture.
+          </p>
+
+          <div
+            class="mt-4 h-px bg-gradient-to-r from-emerald-500/40 to-cyan-500/40"
+          ></div>
+
+          <h3
+            class="mt-4 text-xs font-semibold uppercase tracking-wide text-slate-400"
+          >
+            Based in
+          </h3>
+          <p class="mt-1 text-sm">Pennsylvania, USA</p>
+
+          <h3
+            class="mt-4 text-xs font-semibold uppercase tracking-wide text-slate-400"
+          >
+            Experience
+          </h3>
+          <p class="mt-1 text-sm">10+ years in frontend development</p>
+        </div>
+      </section>
+
+      <!-- ABOUT -->
+      <section id="about" class="py-12">
+        <h2 class="text-2xl font-bold text-slate-50">
+          About <span class="text-emerald-400">Me</span>
+        </h2>
+        <div
+          class="mt-6 grid gap-8 md:grid-cols-[minmax(0,2fr)_minmax(0,1.3fr)]"
+        >
+          <div class="space-y-4 text-sm leading-relaxed text-slate-300">
+            <p>
+              Hi, I'm Jenya, a Lead Frontend Developer based in Pennsylvania,
+              USA, originally from Israel. I’ve spent the last decade building
+              scalable web applications and leading frontend initiatives for
+              data-driven products.
+            </p>
+            <p>
+              My core strengths are in Angular, React, and TypeScript, with a
+              strong focus on micro frontends, monorepos (Nx), and clean,
+              modular UI architectures. I enjoy solving complex problems,
+              improving performance, and making large codebases easier to work
+              with.
+            </p>
+            <p>
+              Beyond the code, I love mentoring engineers, collaborating with
+              product and design, and shaping frontend best practices so teams
+              can move faster without sacrificing quality.
+            </p>
+          </div>
+
+          <div
+            class="space-y-4 rounded-2xl border border-slate-800 bg-slate-900/60 p-5 text-sm"
+          >
+            <div class="space-y-2">
+              <div class="flex items-center justify-between">
+                <span class="text-slate-400">Location</span>
+                <span class="font-medium text-slate-100"
+                  >Pennsylvania, USA</span
+                >
+              </div>
+              <div class="flex items-center justify-between">
+                <span class="text-slate-400">Experience</span>
+                <span class="font-medium text-slate-100">10+ years</span>
+              </div>
+            </div>
+
+            <div class="mt-4 h-px bg-slate-800"></div>
+
+            <div class="space-y-3">
+              <h3
+                class="text-xs font-semibold uppercase tracking-wide text-slate-400"
+              >
+                What I’m good at
+              </h3>
+
+              <div class="space-y-3 text-xs">
+                <div>
+                  <p class="font-semibold text-slate-100">Frontend Architect</p>
+                  <p class="mt-1 text-slate-400">
+                    Designing scalable frontend architectures using micro
+                    frontends and monorepos so teams can build and ship
+                    independently.
+                  </p>
+                </div>
+                <div>
+                  <p class="font-semibold text-slate-100">
+                    Clean Code Advocate
+                  </p>
+                  <p class="mt-1 text-slate-400">
+                    Investing in patterns, tooling, and tests to keep large
+                    projects maintainable and healthy.
+                  </p>
+                </div>
+                <div>
+                  <p class="font-semibold text-slate-100">
+                    Pragmatic Problem Solver
+                  </p>
+                  <p class="mt-1 text-slate-400">
+                    Balancing ideal architecture with real-world constraints and
+                    business needs.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- PROJECTS -->
+      <section id="projects" class="py-12">
+        <h2 class="text-2xl font-bold text-slate-50">
+          My <span class="text-emerald-400">Projects</span>
+        </h2>
+        <p class="mt-3 text-sm text-slate-300">
+          A few highlights that reflect my work with Angular, React, micro
+          frontends, and scalable frontend architectures.
+        </p>
+
+        <div class="mt-8 grid gap-6 md:grid-cols-2">
+          <!-- Project 1 -->
+          <article
+            class="flex flex-col rounded-2xl border border-slate-800 bg-slate-900/60 p-5 text-sm"
+          >
+            <h3 class="text-base font-semibold text-slate-50">
+              Data Discovery Platform – 1touch.io
+            </h3>
+            <p class="mt-2 text-slate-300">
+              Lead the frontend architecture for a data-security and privacy
+              intelligence platform using Angular, Nx, and a micro-frontend
+              approach.
+            </p>
+            <ul class="mt-3 space-y-1 text-xs text-slate-400">
+              <li>• Designed micro-frontend architecture with Single-SPA</li>
+              <li>• Improved load times & maintainability across products</li>
+              <li>• Integrated with NestJS backend services</li>
+            </ul>
+          </article>
+
+          <!-- Project 2 -->
+          <article
+            class="flex flex-col rounded-2xl border border-slate-800 bg-slate-900/60 p-5 text-sm"
+          >
+            <h3 class="text-base font-semibold text-slate-50">
+              Micro-frontend Portal
+            </h3>
+            <p class="mt-2 text-slate-300">
+              Multi-application portal composed of independently deployed
+              Angular micro frontends orchestrated in a unified shell.
+            </p>
+            <ul class="mt-3 space-y-1 text-xs text-slate-400">
+              <li>• Single-SPA-based composition</li>
+              <li>• Shared design system & utilities via Nx</li>
+              <li>• CI/CD pipeline for isolated deployments</li>
+            </ul>
+          </article>
+
+          <!-- Project 3 -->
+          <article
+            class="flex flex-col rounded-2xl border border-slate-800 bg-slate-900/60 p-5 text-sm"
+          >
+            <h3 class="text-base font-semibold text-slate-50">
+              Angular Design System
+            </h3>
+            <p class="mt-2 text-slate-300">
+              A component library built with Angular and TypeScript, aligned
+              with product branding and re-used across multiple apps.
+            </p>
+            <ul class="mt-3 space-y-1 text-xs text-slate-400">
+              <li>• Reusable UI components with Storybook</li>
+              <li>• Theming using SCSS & Angular Material</li>
+              <li>• Strong focus on accessibility and DX</li>
+            </ul>
+          </article>
+
+          <!-- Project 4 (placeholder personal project) -->
+          <article
+            class="flex flex-col rounded-2xl border border-slate-800 bg-slate-900/60 p-5 text-sm"
+          >
+            <h3 class="text-base font-semibold text-slate-50">
+              Personal Experiments & Side Projects
+            </h3>
+            <p class="mt-2 text-slate-300">
+              Experiments with Next.js, Python, and game dev, used as a sandbox
+              for learning and trying out new ideas.
+            </p>
+            <ul class="mt-3 space-y-1 text-xs text-slate-400">
+              <li>• Next.js apps and UI prototypes</li>
+              <li>• Python & FastAPI learning projects</li>
+              <li>• Small game experiments in Python</li>
+            </ul>
+            <a
+              href="https://github.com/jenyashvartsman"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="mt-4 text-xs font-semibold text-emerald-400 hover:text-emerald-300"
+            >
+              View more on GitHub →
+            </a>
+          </article>
+        </div>
+      </section>
+
+      <!-- SKILLS -->
+      <section id="skills" class="py-12">
+        <h2 class="text-2xl font-bold text-slate-50">
+          Technical <span class="text-emerald-400">Skills</span>
+        </h2>
+        <p class="mt-3 text-sm text-slate-300">
+          The tools and technologies I use most often.
+        </p>
+
+        <div class="mt-6 grid gap-6 md:grid-cols-2">
+          <!-- Frontend -->
+          <div
+            class="rounded-2xl border border-slate-800 bg-slate-900/60 p-5 text-sm"
+          >
+            <h3 class="text-sm font-semibold text-slate-100">Frontend</h3>
+            <p class="mt-2 text-xs text-slate-400">
+              Angular (Material, PrimeNG, NG-ZORRO), React, TypeScript,
+              JavaScript (ES6+), HTML5, CSS3, RxJS, NgRx, D3.js.
+            </p>
+          </div>
+
+          <!-- Backend / Platform -->
+          <div
+            class="rounded-2xl border border-slate-800 bg-slate-900/60 p-5 text-sm"
+          >
+            <h3 class="text-sm font-semibold text-slate-100">
+              Backend & Platform
+            </h3>
+            <p class="mt-2 text-xs text-slate-400">
+              Node.js, NestJS, Express, REST APIs, PostgreSQL, MongoDB, TypeORM,
+              Docker, GitHub, GitLab CI/CD.
+            </p>
+          </div>
+
+          <!-- Architecture -->
+          <div
+            class="rounded-2xl border border-slate-800 bg-slate-900/60 p-5 text-sm"
+          >
+            <h3 class="text-sm font-semibold text-slate-100">
+              Architecture & Quality
+            </h3>
+            <p class="mt-2 text-xs text-slate-400">
+              Micro frontends, monorepo management (Nx), modular UI systems,
+              CI/CD automation, Jest, Jasmine, Karma, ESLint, Prettier.
+            </p>
+          </div>
+
+          <!-- Soft skills -->
+          <div
+            class="rounded-2xl border border-slate-800 bg-slate-900/60 p-5 text-sm"
+          >
+            <h3 class="text-sm font-semibold text-slate-100">
+              Leadership & Collaboration
+            </h3>
+            <p class="mt-2 text-xs text-slate-400">
+              Frontend team leadership, code reviews, mentoring, Agile delivery,
+              working closely with product & design, and driving frontend best
+              practices.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- CONTACT -->
+      <section id="contact" class="py-12">
+        <h2 class="text-2xl font-bold text-slate-50">
+          Connect <span class="text-emerald-400">With Me</span>
+        </h2>
+        <p class="mt-3 text-sm text-slate-300">
+          Interested in working together, discussing frontend architecture, or
+          just saying hi? Reach out through any of these:
+        </p>
+
+        <div class="mt-6 space-y-3 text-sm">
+          <div class="flex items-center gap-3">
+            <span class="text-slate-400 w-20 text-xs">Email</span>
+            <a
+              href="mailto:jenyashvartsman@gmail.com"
+              class="text-emerald-300 hover:text-emerald-200 break-all"
+            >
+              jenyashvartsman@gmail.com
+            </a>
+          </div>
+
+          <div class="flex items-center gap-3">
+            <span class="text-slate-400 w-20 text-xs">LinkedIn</span>
+            <a
+              href="https://www.linkedin.com/in/jenya-shvartsman-b027a4100"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="text-emerald-300 hover:text-emerald-200 break-all"
+            >
+              linkedin.com/in/jenya-shvartsman-b027a4100
+            </a>
+          </div>
+
+          <div class="flex items-center gap-3">
+            <span class="text-slate-400 w-20 text-xs">GitHub</span>
+            <a
+              href="https://github.com/jenyashvartsman"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="text-emerald-300 hover:text-emerald-200 break-all"
+            >
+              github.com/jenyashvartsman
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="border-t border-slate-800 bg-slate-950/80">
+      <div
+        class="mx-auto flex max-w-5xl flex-col items-center justify-between gap-3 px-4 py-4 text-xs text-slate-500 sm:flex-row"
+      >
+        <p>© <span id="year"></span> Jenya Shvartsman. All rights reserved.</p>
+        <p>Designed & built with ❤️ using HTML, Tailwind & JS.</p>
+      </div>
+    </footer>
+
+    <!-- SIMPLE JS -->
+    <script src="main.js" defer></script>
+  </body>
+</html>
