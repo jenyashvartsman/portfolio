@@ -2,7 +2,7 @@
 const phrases = [
   "Lead Frontend Developer",
   "Designing scalable frontend architectures",
-  "Building Angular & React applications",
+  "Creating seamless user experiences",
 ];
 const typingEl = document.getElementById("typingText");
 let phraseIndex = 0;
