@@ -1,10 +1,10 @@
 // Typing effect
 const phrases = [
-  "Lead Frontend Developer",
-  "Designing scalable frontend architectures",
-  "Creating seamless user experiences",
+  'Senior Frontend Developer',
+  'Designing scalable frontend architectures',
+  'Creating seamless user experiences',
 ];
-const typingEl = document.getElementById("typingText");
+const typingEl = document.getElementById('typingText');
 let phraseIndex = 0;
 let charIndex = 0;
 let deleting = false;
@@ -34,19 +34,19 @@ function typeLoop() {
 typeLoop();
 
 // Mobile menu
-const menuButton = document.getElementById("menuButton");
-const mobileMenu = document.getElementById("mobileMenu");
+const menuButton = document.getElementById('menuButton');
+const mobileMenu = document.getElementById('mobileMenu');
 
-menuButton.addEventListener("click", () => {
-  mobileMenu.classList.toggle("hidden");
+menuButton.addEventListener('click', () => {
+  mobileMenu.classList.toggle('hidden');
 });
 
 // Close mobile menu on link click
-mobileMenu.querySelectorAll("a").forEach((link) => {
-  link.addEventListener("click", () => {
-    mobileMenu.classList.add("hidden");
+mobileMenu.querySelectorAll('a').forEach((link) => {
+  link.addEventListener('click', () => {
+    mobileMenu.classList.add('hidden');
   });
 });
 
 // Current year in footer
-document.getElementById("year").textContent = new Date().getFullYear();
+document.getElementById('year').textContent = new Date().getFullYear();
