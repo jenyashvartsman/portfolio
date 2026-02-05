@@ -3,22 +3,21 @@ import { projects } from '@/content/site';
 
 export default function Projects() {
   return (
-    <section id="projects" className="container-page py-20 sm:py-28">
+    <section id="projects" className="container-page pb-15">
+      {/* title & description */}
       <div className="mb-12 max-w-2xl">
-        <h2 className="text-3xl font-bold tracking-tight">Projects</h2>
-        <p className="mt-3 text-lg muted">
-          A selection of product work across enterprise SaaS, platforms, and
-          client-facing applications.
-        </p>
+        <h2 className="text-3xl font-bold tracking-tight">{projects.title}</h2>
+        <p className="mt-3 text-lg muted">{projects.description}</p>
       </div>
 
+      {/* projects grid */}
       <div className="grid gap-6 md:grid-cols-2">
-        {projects.map((project) => (
+        {projects.projects.map((project) => (
           <article
             key={project.slug}
             className="group card overflow-hidden transition-all duration-300 hover:shadow-xl"
           >
-            {/* Image */}
+            {/* image */}
             <div className="relative h-56 overflow-hidden bg-[rgb(var(--bg))]">
               <Image
                 src={project.image}
@@ -28,8 +27,9 @@ export default function Projects() {
               />
             </div>
 
-            {/* Content */}
+            {/* content */}
             <div className="p-5">
+              {/* company link */}
               <a
                 href={project.companyUrl}
                 target="_blank"
@@ -39,10 +39,12 @@ export default function Projects() {
                 {project.title}
               </a>
 
+              {/* role */}
               <p className="mt-1 text-xs font-medium text-[rgb(var(--primary))]">
                 {project.role}
               </p>
 
+              {/* description */}
               <p className="mt-3 text-sm muted">{project.description}</p>
             </div>
           </article>

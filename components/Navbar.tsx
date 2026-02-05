@@ -30,23 +30,26 @@ export default function Navbar() {
   return (
     <header className="sticky top-0 z-50 border-b bg-[rgb(var(--bg))]/85 backdrop-blur supports-[backdrop-filter]:bg-[rgb(var(--bg))]/70">
       <div className="container-page flex h-16 items-center justify-between gap-3">
-        {/* Brand */}
+        {/* brand */}
         <Link
           href="/"
           className="ring-focus inline-flex min-w-0 items-center gap-3"
         >
+          {/* logo */}
           <span className="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border bg-[rgb(var(--surface))] shadow-sm">
             <span className="text-sm font-semibold">JS</span>
           </span>
 
+          {/* name & title */}
           <div className="min-w-0 leading-tight">
             <div className="truncate text-sm font-semibold">{site.name}</div>
             <div className="truncate text-xs muted">{site.title}</div>
           </div>
         </Link>
 
-        {/* Desktop nav */}
+        {/* desktop nav */}
         <nav className="hidden items-center gap-1 md:flex">
+          {/* nav items */}
           {items.map((item) => (
             <Link
               key={item.href}
@@ -56,6 +59,8 @@ export default function Navbar() {
               {item.label}
             </Link>
           ))}
+
+          {/* resume */}
           <a
             href={site.cta.href}
             target="_blank"
@@ -66,17 +71,19 @@ export default function Navbar() {
           </a>
         </nav>
 
-        {/* Mobile actions */}
+        {/* mobile actions */}
         <div className="flex items-center gap-2 md:hidden">
+          {/* resume */}
           <a
             href={site.cta.href}
             target="_blank"
             rel="noreferrer"
             className="btn-primary h-10 px-3"
           >
-            Resume
+            {site.cta.label}
           </a>
 
+          {/* menu button */}
           <button
             type="button"
             onClick={() => setOpen(true)}
@@ -92,7 +99,7 @@ export default function Navbar() {
         </div>
       </div>
 
-      {/* Mobile sheet (slick) */}
+      {/* mobile sheet (slick) */}
       <div
         className={cn(
           'md:hidden',
@@ -100,7 +107,7 @@ export default function Navbar() {
         )}
         aria-hidden={!open}
       >
-        {/* Backdrop */}
+        {/* backdrop */}
         <button
           type="button"
           aria-label="Close menu"
@@ -111,7 +118,7 @@ export default function Navbar() {
           )}
         />
 
-        {/* Panel */}
+        {/* panel */}
         <div
           id="mobile-sheet"
           role="dialog"
@@ -122,11 +129,13 @@ export default function Navbar() {
           )}
         >
           <div className="flex h-16 items-center justify-between border-b px-4">
+            {/* brand */}
             <div className="min-w-0">
               <div className="truncate text-sm font-semibold">{site.name}</div>
               <div className="truncate text-xs muted">{site.title}</div>
             </div>
 
+            {/* close button */}
             <button
               type="button"
               onClick={() => setOpen(false)}
@@ -140,6 +149,7 @@ export default function Navbar() {
           </div>
 
           <div className="flex h-[calc(100dvh-4rem)] flex-col px-4 py-4">
+            {/* nav items */}
             <nav className="flex flex-col gap-1">
               {items.map((item) => (
                 <Link
@@ -153,16 +163,9 @@ export default function Navbar() {
               ))}
             </nav>
 
-            <div className="mt-4 border-t pt-4">
-              <a
-                href={site.cta.href}
-                onClick={() => setOpen(false)}
-                className="btn-primary w-full py-3"
-              >
-                {site.cta.label}
-              </a>
-
+            <div className="mt-4 border-t pt-1">
               <div className="mt-3 grid grid-cols-2 gap-2">
+                {/* LinkedIn */}
                 <a
                   className="ring-focus inline-flex items-center justify-center rounded-xl border bg-[rgb(var(--bg))] px-3 py-2 text-sm"
                   href={site.links.linkedin}
@@ -171,6 +174,8 @@ export default function Navbar() {
                 >
                   LinkedIn
                 </a>
+
+                {/* Email */}
                 <a
                   className="ring-focus inline-flex items-center justify-center rounded-xl border bg-[rgb(var(--bg))] px-3 py-2 text-sm"
                   href={site.links.email}
@@ -179,6 +184,7 @@ export default function Navbar() {
                 </a>
               </div>
 
+              {/* close tip */}
               <p className="mt-4 text-xs muted">
                 Tip: press <span className="font-medium">Esc</span> to close.
               </p>
