@@ -1,0 +1,191 @@
+'use client';
+
+import Link from 'next/link';
+import { useEffect, useMemo, useState } from 'react';
+import { site } from '@/content/site';
+
+function cn(...classes: Array<string | false | null | undefined>) {
+  return classes.filter(Boolean).join(' ');
+}
+
+export default function Navbar() {
+  const [open, setOpen] = useState(false);
+  const items = useMemo(() => site.nav, []);
+
+  useEffect(() => {
+    const onKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') setOpen(false);
+    };
+    window.addEventListener('keydown', onKeyDown);
+    return () => window.removeEventListener('keydown', onKeyDown);
+  }, []);
+
+  useEffect(() => {
+    document.documentElement.style.overflow = open ? 'hidden' : '';
+    return () => {
+      document.documentElement.style.overflow = '';
+    };
+  }, [open]);
+
+  return (
+    <header className="sticky top-0 z-50 border-b bg-[rgb(var(--bg))]/85 backdrop-blur supports-[backdrop-filter]:bg-[rgb(var(--bg))]/70">
+      <div className="container-page flex h-16 items-center justify-between gap-3">
+        {/* Brand */}
+        <Link
+          href="/"
+          className="ring-focus inline-flex min-w-0 items-center gap-3"
+        >
+          <span className="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border bg-[rgb(var(--surface))] shadow-sm">
+            <span className="text-sm font-semibold">JS</span>
+          </span>
+
+          <div className="min-w-0 leading-tight">
+            <div className="truncate text-sm font-semibold">{site.name}</div>
+            <div className="truncate text-xs muted">{site.title}</div>
+          </div>
+        </Link>
+
+        {/* Desktop nav */}
+        <nav className="hidden items-center gap-1 md:flex">
+          {items.map((item) => (
+            <Link
+              key={item.href}
+              href={item.href}
+              className="btn-ghost muted hover:text-[rgb(var(--text))]"
+            >
+              {item.label}
+            </Link>
+          ))}
+          <a
+            href={site.cta.href}
+            target="_blank"
+            rel="noreferrer"
+            className="btn-primary ml-2"
+          >
+            {site.cta.label}
+          </a>
+        </nav>
+
+        {/* Mobile actions */}
+        <div className="flex items-center gap-2 md:hidden">
+          <a
+            href={site.cta.href}
+            target="_blank"
+            rel="noreferrer"
+            className="btn-primary h-10 px-3"
+          >
+            Resume
+          </a>
+
+          <button
+            type="button"
+            onClick={() => setOpen(true)}
+            className="ring-focus inline-flex h-10 w-10 items-center justify-center rounded-xl border bg-[rgb(var(--surface))] shadow-sm cursor-pointer"
+            aria-label="Open menu"
+            aria-expanded={open}
+            aria-controls="mobile-sheet"
+          >
+            <span className="text-lg leading-none" aria-hidden="true">
+              ☰
+            </span>
+          </button>
+        </div>
+      </div>
+
+      {/* Mobile sheet (slick) */}
+      <div
+        className={cn(
+          'md:hidden',
+          open ? 'pointer-events-auto' : 'pointer-events-none',
+        )}
+        aria-hidden={!open}
+      >
+        {/* Backdrop */}
+        <button
+          type="button"
+          aria-label="Close menu"
+          onClick={() => setOpen(false)}
+          className={cn(
+            'fixed inset-0 z-40 bg-black/30 transition-opacity',
+            open ? 'opacity-100' : 'opacity-0',
+          )}
+        />
+
+        {/* Panel */}
+        <div
+          id="mobile-sheet"
+          role="dialog"
+          aria-modal="true"
+          className={cn(
+            'fixed right-0 top-0 z-50 h-dvh w-[min(92vw,380px)] border-l bg-[rgb(var(--surface))] shadow-2xl transition-transform',
+            open ? 'translate-x-0' : 'translate-x-full',
+          )}
+        >
+          <div className="flex h-16 items-center justify-between border-b px-4">
+            <div className="min-w-0">
+              <div className="truncate text-sm font-semibold">{site.name}</div>
+              <div className="truncate text-xs muted">{site.title}</div>
+            </div>
+
+            <button
+              type="button"
+              onClick={() => setOpen(false)}
+              className="ring-focus inline-flex h-10 w-10 items-center justify-center rounded-xl border bg-[rgb(var(--bg))] cursor-pointer"
+              aria-label="Close menu"
+            >
+              <span className="text-xl leading-none" aria-hidden="true">
+                ×
+              </span>
+            </button>
+          </div>
+
+          <div className="flex h-[calc(100dvh-4rem)] flex-col px-4 py-4">
+            <nav className="flex flex-col gap-1">
+              {items.map((item) => (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  onClick={() => setOpen(false)}
+                  className="ring-focus rounded-xl px-3 py-3 text-base hover:bg-[rgba(var(--text),0.04)]"
+                >
+                  <span className="font-medium">{item.label}</span>
+                </Link>
+              ))}
+            </nav>
+
+            <div className="mt-4 border-t pt-4">
+              <a
+                href={site.cta.href}
+                onClick={() => setOpen(false)}
+                className="btn-primary w-full py-3"
+              >
+                {site.cta.label}
+              </a>
+
+              <div className="mt-3 grid grid-cols-2 gap-2">
+                <a
+                  className="ring-focus inline-flex items-center justify-center rounded-xl border bg-[rgb(var(--bg))] px-3 py-2 text-sm"
+                  href={site.links.linkedin}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  LinkedIn
+                </a>
+                <a
+                  className="ring-focus inline-flex items-center justify-center rounded-xl border bg-[rgb(var(--bg))] px-3 py-2 text-sm"
+                  href={site.links.email}
+                >
+                  Email
+                </a>
+              </div>
+
+              <p className="mt-4 text-xs muted">
+                Tip: press <span className="font-medium">Esc</span> to close.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+  );
+}

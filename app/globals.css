@@ -1,0 +1,80 @@
+@import 'tailwindcss';
+
+/* tokens */
+@layer base {
+  :root {
+    --bg: 248 250 252; /* slate-50 */
+    --surface: 255 255 255;
+    --text: 15 23 42; /* slate-900 */
+    --muted: 100 116 139; /* slate-500 */
+    --border: 226 232 240; /* slate-200 */
+
+    --primary: 37 99 235; /* blue-600 */
+    --primary-700: 29 78 216; /* blue-700 */
+
+    --shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+    --radius: 16px;
+  }
+
+  html {
+    text-rendering: geometricPrecision;
+    -webkit-text-size-adjust: 100%;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply min-h-dvh antialiased;
+    background: rgb(var(--bg));
+    color: rgb(var(--text));
+  }
+
+  * {
+    border-color: rgb(var(--border));
+  }
+
+  ::selection {
+    background: rgba(var(--primary), 0.16);
+  }
+}
+
+/* components */
+@layer components {
+  .container-page {
+    @apply mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8;
+  }
+
+  .muted {
+    color: rgb(var(--muted));
+  }
+
+  .card {
+    @apply rounded-2xl border bg-white;
+    background: rgb(var(--surface));
+    box-shadow: var(--shadow);
+  }
+
+  /* NOTE: these are custom CLASSES, so use plain CSS here (no @apply ring-focus) */
+  .ring-focus {
+    outline: none;
+  }
+  .ring-focus:focus-visible {
+    box-shadow:
+      0 0 0 2px rgb(var(--primary)),
+      0 0 0 4px rgb(var(--bg));
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center rounded-xl px-4 py-2 text-sm font-semibold text-white;
+    background: rgb(var(--primary));
+  }
+  .btn-primary:hover {
+    background: rgb(var(--primary-700));
+  }
+
+  .btn-ghost {
+    @apply inline-flex items-center justify-center rounded-xl px-3 py-2 text-sm;
+  }
+  .btn-ghost:hover {
+    background: rgba(var(--text), 0.04);
+  }
+}
