@@ -1,10 +1,12 @@
-import { title } from 'process';
+const email = 'jenyashvartsman@gmail.com';
+const linkedin = 'https://www.linkedin.com/in/jenya-shvartsman-b027a4100/';
+const resume = '/Jenya_Shvartsman_Senior_Frontend_Developer_Resume.pdf';
 
 export const site = {
   name: 'Jenya Shvartsman',
-  title: 'Senior Frontend Developer',
+  title: 'Senior Frontend Developer (UI Platform & Architecture)',
   description:
-    'Product-focused frontend engineer specializing in Angular, TypeScript, and scalable UI architecture.',
+    'Senior frontend developer with 10+ years of experience building and scaling SaaS UI platforms. Specialized in Angular, React, microfrontends, Nx monorepos, and long-lived frontend architecture.',
   nav: [
     { label: 'Home', href: '/' },
     { label: 'Projects', href: '/#projects' },
@@ -12,18 +14,18 @@ export const site = {
     { label: 'Skills', href: '/#skills' },
     { label: 'Contact', href: '/#contact' },
   ],
-  cta: { label: 'Resume', href: '/resume.pdf' },
+  cta: { label: 'Resume', href: resume },
   links: {
-    linkedin: 'https://www.linkedin.com/in/jenya-shvartsman/',
-    email: 'mailto:jenya.shvartsman@gmail.com',
+    linkedin,
+    email: `mailto:${email}`,
   },
 } as const;
 
 export const hero = {
-  eyebrow: 'Senior Frontend Developer',
-  headline: 'I build clean, scalable, product-focused web interfaces.',
+  eyebrow: 'Senior Frontend Developer (UI Platform & Architecture)',
+  headline: 'I build scalable frontend platforms for complex SaaS products.',
   subHeadline:
-    '8+ years of experience with Angular, TypeScript, and modern frontend architecture. Focused on performance, maintainability, and UX.',
+    '10+ years owning UI architecture across long-lived applications—microfrontends (Single-SPA), Nx monorepos, shared UI libraries, and design systems. Focused on maintainability, cross-team impact, and product-driven decisions.',
   primaryCta: { label: 'View Projects', href: '/#projects' },
   secondaryCta: { label: 'Contact Me', href: '/#contact' },
 } as const;
@@ -31,7 +33,7 @@ export const hero = {
 export const experience = {
   title: 'Experience',
   description:
-    'Roles focused on frontend architecture, platform ownership, and building dependable UI for real products.',
+    'Frontend roles centered on platform ownership, UI architecture, and building dependable interfaces for real, long-lived products.',
   roles: [
     {
       company: '1touch.io',
@@ -41,7 +43,7 @@ export const experience = {
           title: 'Senior Frontend Developer & Team Lead',
           period: 'Feb 2018 — Present',
           description:
-            'Own the frontend platform and UI architecture across a portfolio of Angular SaaS apps. I set shared standards (libraries, patterns, microfrontend composition) that multiple teams rely on, and I guide engineers through design reviews, technical direction, and code-quality expectations. I also partner with product/design to turn complex privacy/compliance workflows into interfaces that feel clear and usable, and I built a demo environment that supports sales and pre-sales evaluations.',
+            'Own the frontend platform and UI architecture across a suite of Angular-based SaaS products. Define shared standards for libraries, patterns, and microfrontend composition (Nx, Single-SPA) adopted across teams. Lead and mentor frontend engineers through design reviews and architectural decisions, while partnering closely with product and design to translate complex data-privacy and compliance workflows into clear, usable interfaces. Built a reusable demo environment used by sales and pre-sales teams for customer evaluations and proofs of concept.',
         },
       ],
     },
@@ -53,7 +55,7 @@ export const experience = {
           title: 'Frontend Developer',
           period: 'Feb 2016 — Jan 2018',
           description:
-            'Built frontend features for a large enterprise e-commerce platform where reliability mattered. Worked on responsive, data-driven UIs integrated with Java (Spring) services, collaborating with distributed Agile teams to ship production-grade functionality.',
+            'Developed frontend features for a large-scale enterprise e-commerce platform supporting mission-critical workflows. Built responsive, data-driven UIs integrated with Java (Spring) backend services and collaborated with distributed Agile teams to deliver reliable, production-grade software.',
         },
       ],
     },
@@ -65,7 +67,7 @@ export const experience = {
           title: 'Web Developer',
           period: 'Oct 2014 — Nov 2015',
           description:
-            'Delivered responsive marketing sites and landing pages from design mockups, focusing on clean implementation and fast turnaround for client work.',
+            'Built responsive marketing websites and landing pages from design mockups, focusing on clean implementation, performance, and fast turnaround for client projects.',
         },
       ],
     },
@@ -75,7 +77,7 @@ export const experience = {
 export const projects = {
   title: 'Projects',
   description:
-    'A selection of product work across enterprise SaaS, platforms, and client-facing applications.',
+    'Selected product work spanning enterprise SaaS platforms, internal tools, and client-facing applications.',
   projects: [
     {
       slug: 'kontxtual',
@@ -84,7 +86,7 @@ export const projects = {
       companyUrl: 'https://www.1touch.io',
       image: '/images/projects/kontxtual.jpg',
       description:
-        'A cloud-native data intelligence platform designed for large-scale sensitive data discovery. I worked on building and evolving complex Angular-based workflows that help governance and privacy teams classify data, validate exposure, and enforce compliance across enterprise environments, with a strong focus on clarity, performance, and scalability.',
+        'A cloud-native data intelligence platform for large-scale sensitive data discovery. Led and evolved complex Angular-based workflows that enable governance and privacy teams to classify data, assess exposure, and enforce compliance across enterprise environments, with a strong emphasis on clarity, performance, and scalability.',
     },
     {
       slug: 'inventa',
@@ -93,7 +95,7 @@ export const projects = {
       companyUrl: 'https://www.1touch.io',
       image: '/images/projects/inventa.png',
       description:
-        'A data investigation and cataloging product that enables analysts to search, understand, and validate sensitive information across diverse data sources. I led frontend development efforts, shaping reusable UI patterns and guiding the team in delivering a maintainable, analyst-friendly interface for complex compliance workflows.',
+        'A data investigation and cataloging product that helps analysts search, understand, and validate sensitive information across diverse data sources. Led frontend development, defined reusable UI patterns, and guided the team in delivering a maintainable, analyst-friendly interface for complex compliance workflows.',
     },
     {
       slug: 'console-manager',
@@ -102,7 +104,7 @@ export const projects = {
       companyUrl: 'https://www.1touch.io',
       image: '/images/projects/cm.png',
       description:
-        'A central management system used to configure data sources and govern how cataloged data flows across the 1touch platform. I helped design and implement the frontend architecture that supports onboarding new sources, managing metadata, and controlling downstream data processing behavior.',
+        'A central management system for configuring data sources and governing how cataloged data flows across the 1touch platform. Designed and implemented frontend architecture supporting source onboarding, metadata management, and control over downstream data processing.',
     },
     {
       slug: 'first-product',
@@ -111,7 +113,7 @@ export const projects = {
       companyUrl: 'https://www.1touch.io',
       image: '/images/projects/1touchio-first.jpeg',
       description:
-        'The original data discovery and governance application that became the foundation for later products like Inventa and Kontxtual. I contributed to building the initial UI and core workflows, gaining early experience with large-scale data visibility and compliance-driven interfaces.',
+        'The original data discovery and governance application that laid the foundation for later products such as Inventa and Kontxtual. Contributed to building the initial UI and core workflows, gaining early experience with large-scale data visibility and compliance-driven interfaces.',
     },
     {
       slug: 'amdocs',
@@ -120,7 +122,7 @@ export const projects = {
       companyUrl: 'https://www.amdocs.com',
       image: '/images/projects/amdocs.jpg',
       description:
-        'Worked on large-scale customer experience and self-service platforms for Movistar operations in Peru and Chile. Focused on building responsive, high-performance UI and reusable components within complex enterprise telecom systems, collaborating as part of a distributed Amdocs delivery team.',
+        'Contributed to large-scale customer experience and self-service platforms for Movistar operations in Peru and Chile. Built responsive, high-performance UIs and reusable components within complex enterprise telecom systems as part of a distributed Amdocs delivery team.',
     },
     {
       slug: 'wild-solutions',
@@ -129,7 +131,7 @@ export const projects = {
       companyUrl: 'https://wilds.co.il',
       image: '/images/projects/wawa.jpg',
       description:
-        'Delivered responsive, production-ready websites for client projects, translating design concepts into clean, maintainable frontend implementations. Worked closely with designers to ensure visual accuracy, usability, and fast turnaround.',
+        'Delivered responsive, production-ready websites for client projects, translating design concepts into clean, maintainable frontend implementations with a focus on usability, performance, and fast turnaround.',
     },
   ],
 } as const;
@@ -137,7 +139,7 @@ export const projects = {
 export const skills = {
   title: 'Skills',
   description:
-    'The tools and patterns I use to ship maintainable, scalable product UI.',
+    'Technologies, tools, and patterns I use to build scalable, maintainable frontend platforms and product UI.',
   skills: [
     {
       title: 'Frontend',
@@ -150,10 +152,13 @@ export const skills = {
         'NgRx',
         'HTML5',
         'CSS3',
-        'SCSS/LESS',
+        'SCSS / CSS Architecture',
         'Design Systems',
         'Shared UI Libraries',
-        'D3.js',
+        'Data-Driven UI (D3.js)',
+        'Performance Optimization',
+        'Internationalization (i18n)',
+        'Frontend Monitoring & Error Tracking',
       ],
     },
     {
@@ -176,19 +181,18 @@ export const skills = {
         'Nx Monorepos',
         'Scalable SPA Architecture',
         'Modular UI Systems',
-        'Jest',
-        'Jasmine',
-        'ESLint',
-        'CI/CD',
+        'Automated Testing (Jest, Jasmine)',
+        'Linting & Standards (ESLint)',
+        'CI/CD Pipelines',
       ],
     },
     {
       title: 'Leadership & Collaboration',
       items: [
         'Frontend Team Leadership',
-        'Mentoring',
+        'Mentoring & Coaching',
         'Technical Direction',
-        'Code Reviews',
+        'Architecture & Design Reviews',
         'Product & Design Partnership',
         'Agile Delivery',
         'Figma',
@@ -202,17 +206,17 @@ export const skills = {
 
 export const contact = {
   title: 'Get in touch',
-  description: 'You can reach me directly via email or LinkedIn.',
+  description: 'Feel free to reach out via email or LinkedIn.',
   items: [
     {
       label: 'LinkedIn',
-      value: 'linkedin.com/in/jenya-shvartsman-b027a4100',
-      href: 'https://linkedin.com/in/jenya-shvartsman-b027a4100',
+      value: 'linkedin.com/in/jenya-shvartsman',
+      href: linkedin,
     },
     {
       label: 'Email',
-      value: 'jenyashvartsman@gmail.com',
-      href: 'mailto:jenyashvartsman@gmail.com',
+      value: email,
+      href: `mailto:${email}`,
     },
   ],
 } as const;
@@ -222,11 +226,11 @@ export const footer = {
   links: [
     {
       label: 'LinkedIn',
-      href: 'https://linkedin.com/in/jenya-shvartsman-b027a4100',
+      href: linkedin,
     },
     {
       label: 'Email',
-      href: 'mailto:jenyashvartsman@gmail.com',
+      href: `mailto:${email}`,
     },
   ],
 } as const;

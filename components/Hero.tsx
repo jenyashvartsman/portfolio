@@ -1,4 +1,5 @@
 import { hero } from '@/content/site';
+import Link from 'next/link';
 
 export default function Hero() {
   return (
@@ -20,17 +21,17 @@ export default function Hero() {
         {/* call to action */}
         <div className="mt-10 flex flex-wrap gap-3">
           {/* primary call to action */}
-          <a href={hero.primaryCta.href} className="btn-primary ring-focus">
+          <Link href={hero.primaryCta.href} className="btn-primary ring-focus">
             {hero.primaryCta.label}
-          </a>
+          </Link>
 
           {/* secondary call to action */}
-          <a
+          <Link
             href={hero.secondaryCta.href}
             className="btn-ghost ring-focus border"
           >
             {hero.secondaryCta.label}
-          </a>
+          </Link>
         </div>
       </div>
     </section>

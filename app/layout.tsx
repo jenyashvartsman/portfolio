@@ -3,6 +3,7 @@ import Navbar from '@/components/Navbar';
 import type { Metadata } from 'next';
 import { site } from '@/content/site';
 import Footer from '@/components/Footer';
+import { withBasePath } from '@/libs/asset';
 
 export const metadata: Metadata = {
   title: {
@@ -10,6 +11,9 @@ export const metadata: Metadata = {
     template: `%s — ${site.name}`,
   },
   description: site.description,
+  icons: {
+    icon: withBasePath('/favicon.svg'),
+  },
 };
 
 export default function RootLayout({
