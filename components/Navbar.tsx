@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import { useEffect, useMemo, useState } from 'react';
 import { site } from '@/content/site';
+import { withBasePath } from '@/libs/asset';
 
 function cn(...classes: Array<string | false | null | undefined>) {
   return classes.filter(Boolean).join(' ');
@@ -67,7 +68,7 @@ export default function Navbar() {
 
             {/* resume */}
             <a
-              href={site.cta.href}
+              href={withBasePath(site.cta.href)}
               target="_blank"
               rel="noreferrer"
               className="btn-primary ml-2"
@@ -80,7 +81,7 @@ export default function Navbar() {
           <div className="flex items-center gap-2 md:hidden">
             {/* resume */}
             <a
-              href={site.cta.href}
+              href={withBasePath(site.cta.href)}
               target="_blank"
               rel="noreferrer"
               className="btn-primary h-10 px-3"

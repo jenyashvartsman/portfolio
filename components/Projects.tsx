@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import { projects } from '@/content/site';
+import { withBasePath } from '@/libs/asset';
 
 export default function Projects() {
   return (
@@ -20,7 +21,7 @@ export default function Projects() {
             {/* image */}
             <div className="relative h-56 overflow-hidden bg-[rgb(var(--bg))]">
               <Image
-                src={project.image}
+                src={withBasePath(project.image)}
                 alt={project.title}
                 fill
                 className="object-cover transition-transform duration-500 group-hover:scale-105"
